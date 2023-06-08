@@ -1,8 +1,13 @@
 ﻿using fabsi.DesktopTracking.App.Models;
 using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Timers;
+using System.Windows;
 using System.Windows.Controls.Primitives;
 using Windows.Media.Core;
 using WindowsDesktop;
+using Timer = System.Timers.Timer;
 
 namespace fabsi.DesktopTracking.App.Services;
 
@@ -23,11 +28,15 @@ public class VirtualDesktopService : IVirtualDesktopService
     public DateTime From { get; set; }
     public Guid CurrentDesktopId { get; set; }
     protected TimeSpan Threshold { get; }
+    protected Timer ScreenshotTimer { get; } = new();
 
     public VirtualDesktopService(IJsonDataService jsonDataService, TimeSpan threshold)
     {
         Threshold = threshold;
         _jsonDataService = jsonDataService;
+        // ScreenshotTimer.Interval = screenshotInterval.TotalMilliseconds;
+        // ScreenshotTimer.Elapsed += OnScreenshot;
+        // ScreenshotTimer.Enabled = true;
         InitializeDesktops();
     }
 

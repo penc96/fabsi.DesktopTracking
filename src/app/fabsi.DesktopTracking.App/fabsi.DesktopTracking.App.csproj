@@ -5,10 +5,13 @@
         <TargetFramework>net6.0-windows10.0.19041</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+      <PackageReference Include="ScreenshotTaker" Version="1.0.2" />
+      <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
       <PackageReference Include="VirtualDesktop.Net5" Version="5.0.6" />
     </ItemGroup>
 

@@ -12,7 +12,7 @@ class Program
     static void Main(string[] args)
     {
         IConsoleAppService consoleService = new ConsoleAppService();
-        consoleService.ValidateBackgroundApp();
+        // consoleService.ValidateBackgroundApp();
 
         var ctSource = new CancellationTokenSource();
 
